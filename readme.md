@@ -87,7 +87,7 @@ Type: `String`
 #### options.config
 
 Type: `String`
-Default: `options.src`
+Default: `__dirname`
 
 #### options.debug
 

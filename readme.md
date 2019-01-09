@@ -1,17 +1,11 @@
-***this package is no longer supported, use the [webpack plugin](https://github.com/c0b41/webpack-apidoc) instead*** 
+# [gulp](https://github.com/gulpjs/gulp)-apidoc
 
-# [gulp](https://github.com/gulpjs/gulp)-apidoc 
-
-
-![npm-version](https://img.shields.io/npm/v/gulp-apidoc.svg)
-![download-count](https://img.shields.io/npm/dm/gulp-apidoc.svg)
-![dev-deps](https://david-dm.org/c0b41/gulp-apidoc.svg)
-
-
-Generates a RESTful web API Documentationusing the [apidoc](https://github.com/apidoc/apidoc) library.
+Generates a RESTful web API Documentation using the [apidoc](https://github.com/apidoc/apidoc) library.
 
 ## How It Works
+
 `/path/api/stuff.js`:
+
 ```js
 /**
  * @api {get} /user/:id Request User information
@@ -25,59 +19,57 @@ Generates a RESTful web API Documentationusing the [apidoc](https://github.com/a
  */
 ```
 
-
 ## Install
 
-Install with [npm](https://npmjs.org/package/gulp-apidoc)
+Install with GitHub:
 
-```
-npm install --save-dev gulp-apidoc
+```cli
+npm install --save-dev devallama/gulp-apidoc
 ```
 
+Soon to be on NPM (hopefully).
 
 ## Usage
 
-```js
-var gulp = require('gulp'),
+```shell
+const gulp = require('gulp'),
     apidoc = require('gulp-apidoc');
 
-gulp.task('apidoc', function(done){
-          apidoc({
-            src: "example/",
-            dest: "build/"
-          },done);
+gulp.task('apidoc', function(done) {
+    apidoc({
+        src: "example/",
+        dest: "build/"
+    }, done);
 });
 ```
 
 With options:
 
 ```js
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     apidoc = require('gulp-apidoc');
 
-gulp.task('apidoc',function(done){
-              apidoc({
-	              src: "example/",
-                  dest: "build/",
-                  template: "template/",
-                  debug: true,
-                  includeFilters: [ ".*\\.js$" ]
-              },done);
+gulp.task('apidoc', function(done) {
+    apidoc({
+        src: "example/",
+        dest: "build/",
+        template: "template/",
+        debug: true,
+        config: "configurations/",
+        includeFilters: [ ".*\\.js$" ]
+    }, done);
 });
 ```
 
 Other options [checkout](https://github.com/apidoc/apidoc/blob/master/lib/index.js#L14-L21).
 
-
 ## Options
-
 
 #### options.src
 
 The folder to scan for apidoc documentation.
 
 Type: `String`
-
 
 #### options.dest
 
@@ -121,3 +113,6 @@ Default: `false`
 
 Type: `Array`
 Default: `[]`
+
+---
+Forked from [c0b41/gulp-apidoc](https://github.com/c0b41/gulp-apidoc)
